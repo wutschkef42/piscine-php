@@ -1,0 +1,67 @@
+
+
+html, body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	font-family: Arial;
+}
+
+.logo p
+{
+	font-family: Arial;
+	font-size: 36px;
+	color: white;
+	margin: 0;
+	padding: 10px;
+	padding-left: 30px;
+}
+
+.nav {
+	background-color: gray;
+}
+
+
+.nav ul {
+	list-style: none;
+}
+
+.nav h3 {
+	font-size: 32px;
+	color: blue;
+}
+
+.nav p {
+	font-size: 18px;
+}
+
+.container {
+	width: 1200px;
+	margin: 0 auto;
+	
+}
+
+.dropdown {
+	width: 1000px;
+}
+
+.dropdown ul {
+	width: 400px;
+	float: left;
+}
+
+.hambar {
+	width: 35px;
+    height: 5px;
+    background-color: black;
+    margin: 6px 0;
+}
+
+.hamburger
+{
+	display: inline-block;
+}
+
+#label-menu-open {
+	display: inline;
+}
