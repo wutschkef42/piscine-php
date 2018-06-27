@@ -1,7 +1,8 @@
-#!/usr/bin/php
+#!/usr/bin/env php
 
+<?php
 Echo "Enter a Number: ";
-$number = fgets(STDIN);
+$number = trim(fgets(STDIN));
 if (!is_numeric($number))
 {
 	echo "'$number' is not a number";
@@ -14,4 +15,4 @@ else
 {
 	echo "The number $number is odd";
 }
-
+?>
