@@ -66,8 +66,9 @@ a {
   user-select: none;
 }
 
+
 .header .menu-icon .navicon {
-  background: #333;
+  background: none; /* turn to #ccc to activate real hamburger icon */
   display: block;
   height: 2px;
   position: relative;
@@ -77,12 +78,11 @@ a {
 
 .header .menu-icon .navicon:before,
 .header .menu-icon .navicon:after {
-  background: #333;
+  background: none; /* turn to #ccc to activate real hamburger icon */
   content: '';
   display: block;
   height: 100%;
   position: absolute;
-  transition: all .2s ease-out;
   width: 100%;
 }
 
@@ -137,6 +137,10 @@ a {
   .header .menu-icon {
     display: none;
   }
+
+  #burger {
+  	display: none;
+  }
 }
 
 
@@ -149,14 +153,16 @@ a {
 }
 
 .section a {
-  position: relative;
+s  position: relative;
   float: left;
   width: 100%;
 }
 
 .section a img {
-  width: 100%;
+  max-width: 600px;
   display: block;
+  margin: 0 auto;
+  padding-top: 200px;
 }
 
 .section a span {
@@ -168,3 +174,12 @@ a {
   text-shadow: 1px 1px 0 #000;
 }
 
+
+/* dat burger though */
+
+#burger {
+	width: 80px;
+	position: absolute;
+	right: -12px;
+	top: -20px;
+}
