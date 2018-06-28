@@ -1,5 +1,4 @@
 #!/usr/bin/env php
-
 <?php
 $x = 1;
 while ($x <= 1000) {
@@ -8,4 +7,3 @@ while ($x <= 1000) {
 		echo "\n";
 	$x++;
 }
-?>
