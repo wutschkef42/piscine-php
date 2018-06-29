@@ -10,38 +10,15 @@ $fd = fopen($argv[1], "r") or die("Cannot open file: ".$argv[1]);
 $page = fread($fd,filesize($argv[1]));
 
 
-/* regex patterns */
+$page = preg_replace_callback("/(<a )(.*?)(>)(.*)(<\/a>)/si", function($matches) {
+    $matches[0] = preg_replace_callback("/( title=\")(.*?)(\")/mi", function($matches) {
+        return ($matches[1]."".strtoupper($matches[2])."".$matches[3]);
+    }, $matches[0]);
 
-$pattern_title = "/title=\"([\s\S]*?)\"/";
-$pattern_anchor = "/<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/";
+    $matches[0] = preg_replace_callback("/(>)(.*?)(<)/si", function($matches) {
+        return ($matches[1]."".strtoupper($matches[2])."".$matches[3]);
+    }, $matches[0]);
 
-
-$page = preg_replace_callback(
-	$pattern_title,
-	function ($matches) {
-		return "title=\"".strtoupper($matches[1])."\"";
-	},
-	$page
-
-);
-
-$page = preg_replace_callback(
-	$pattern_anchor,
-	function($matches) {
-		$allcap="";
-		$parts = preg_split("/(<|>)/", $matches[2]);
-		$i = 0;
-		foreach($parts as $part)
-		{
-			if ($i % 2 == 0)
-				$allcap = $allcap.strtoupper($part);
-			else
-				$allcap = $allcap."<".$part.">";
-			$i++;
-		}
-		return (preg_replace("/".$matches[2]."/", $allcap, $matches[0]));
-	},
-	$page
-);
-
+    return ($matches[0]);
+}, $page);
 echo $page;
