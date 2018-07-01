@@ -7,7 +7,7 @@ function add_product($product_store, $product_name, $image_url, $price, $descrip
 	file_put_contents($product_store, serialize($products));
 }
 
-function del_product($product_store, $product_name)
+function del_product($product_store, $category_store, $product_name)
 {
 	$products = unserialize(file_get_contents($product_store));
 	foreach ($products as $key => &$product)
@@ -17,7 +17,7 @@ function del_product($product_store, $product_name)
 	}
 	unset($product);
 	file_put_contents($product_store, serialize($products));
-	delete_category_associations($product_store, $category_name);
+	delete_category_associations($category_store, $product_name);
 }
 
 function list_products($product_store)

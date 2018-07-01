@@ -35,6 +35,20 @@ function list_categories($category_store)
 	}
 }
 
+function get_products_by_category($category_name)
+{
+	// return value of this funciton will be an array of products
+	/*
+	$products = get_products_by_category('applicanes');
+	foreach($products as $key => $product)
+	{
+		//access by
+		//$product['product_name'];
+		//(product_name, image_url, description, price, categories_array)
+	}
+	*/
+}
+
 function delete_product_associations($product_store, $category_name)
 {
 	$products = unserialize(file_get_contents($product_store));
