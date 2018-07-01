@@ -1,0 +1,63 @@
+
+
+NOW: make index page to allow for
+
+
+
+>>> DATA MANAGEMENT
+
+	State is maintained in serialized arrays.
+
+	The store must maintain a list of REGISTERED USERS.
+	The store must maintain a list of AVAILABLE PRODUCTS.
+	The store must maintain a list of CATEGORIES.
+		PRODUCTS and CATEGORIES have an n-to-n relationship.
+	The store must maintain a BASKET.
+		Non-registered users have BASKETS associated to their SESSION
+		Logged-in users have BASKETS associated to their ACCOUNT
+		BASKETS must be transferable from SESSION-associated to
+		ACCOUNT-associated
+	
+
+	DATA STRUCTURES
+
+	PRODUCTS: key is PRODUCT_ID, value is ARRAY(product_name, image_url, price,
+	description)
+
+
+
+	CATEGORIES: key is CATEGORY_ID, value is STRING(category_name)
+
+
+
+	USERS: key is LOGIN, value is PASSWORD_HASH
+	=> stored in db/passwd
+
+
+	PRODUCT 2 CATEGORY ASSOCIATION: key is PRODUCT_ID, value is
+	ARRAY(category_1, ... category_n)
+
+	CATEGORY 2 PRODUCT ASSOCIATION: key is CATEGEORY_ID, value is
+	ARRAY(product_1, ... product_n)
+
+
+	DATA OPERATIONS
+
+	ADD_PRODUCT
+	DELETE_PRODUCT
+	UPDATE_PRODUCT
+
+
+	ADD CATEGORY
+	DELETE_CATEGORY
+
+
+
+
+// pages
+
+index
+register
+log-in
+
+	
