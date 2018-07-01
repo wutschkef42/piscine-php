@@ -23,4 +23,5 @@ foreach ($accounts as $account)
 $accounts[] = array("login" => $_POST["login"], "passwd" => hash("ripemd160", $_POST["passwd"]));
 file_put_contents($file, serialize($accounts));
 echo "OK\n";
+header('Location: index.html');
 ?>
