@@ -4,3 +4,4 @@ $user_store = 'passwd';
 $product_store = 'products';
 $category_store = 'categories';
 $basket_store = 'baskets';
+$order_store = 'orders';

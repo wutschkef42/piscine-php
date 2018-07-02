@@ -1,4 +1,5 @@
 <?php
+session_start();
 include('install.php');
 
 function get_price($products, $product, $qty)
@@ -25,13 +26,22 @@ function get_price($products, $product, $qty)
 	</head>
 	<body>
 		<h1>Landing page</h1>
-		<a href="signup.html">Sign up</a>    
-		<a href="login.html">Log in</a>
+	
 		<?php
-			if ($_SESSION['logged_on_user'] = "")
-				echo "<a href='logout.php'>Log out</a>";
+				if ($_SESSION['logged_on_user'] && $_SESSION['logged_on_user'] != "")
+					echo "<a href='logout.php'>  Log out  </a>";
+				else
+				{
+						echo "<a href='signup.html'>  Sign up  </a>";
+						echo "<a href='login.html'>  Log in  </a>";
+				}
+				if ($_SESSION['logged_on_user'] === 'root')
+				{
+					echo "<a href='view_orders.php'>  Order List  </a>";
+					echo "<a href='admin_panel.php'>  Admin Panel  </a>";
+				}
 		?>
-		<a href="basket_list.php">Cart</a>
+		<a href="basket_list.php">  Cart  </a>
 		<h2>Products</h2>
 		<?php
 		include('constants.php');
@@ -42,6 +52,17 @@ function get_price($products, $product, $qty)
 			echo $html;
 		}
 		?>
-
+		<h2>Categories</h2>
+		<ul>
+		<?php
+		include('constants.php');
+		$categories = unserialize(file_get_contents($db_dir.$category_store));
+		foreach($categories as $cat)
+		{
+			$html = "<li><a href='category_detail.php?category_name=".$cat['category_name']."'>".$cat['category_name']."</a</li>";
+			echo $html;
+		}
+		?>
+		</ul>
 	</body>
 </html>

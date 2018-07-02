@@ -9,4 +9,4 @@ if (!isset($_POST['category_name']) || !isset($_POST['products']) || !isset($_PO
 }
 $products = explode(',', $_POST['products']);
 add_category($db_dir.$category_store, $_POST['category_name'], $products);
-header('Location: admin_panel.html');
+header('Location: admin_panel.php');

@@ -36,6 +36,16 @@ function get_price($products, $product, $qty)
 <html>
 <body>
 <h1>Basket</h1>
+<a href="/index.php">Home</a>
+<?php
+	if ($_SESSION['logged_on_user'] && $_SESSION['logged_on_user'] != "")
+		echo "<a href='logout.php'>  Log out  </a>";
+	else
+	{
+			echo "<a href='signup.html'>  Sign up  </a>";
+			echo "<a href='login.html'>  Log in</a>";
+	}
+?>
 <?php
 if (!$_SESSION['basket'])
 	return ;

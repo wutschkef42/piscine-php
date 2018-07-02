@@ -1,8 +1,7 @@
 <?php
 include 'auth.php';
-include 'basket_api.php';
 include 'constants.php';
-session_start();	
+session_start();
 if(!auth($_POST['login'], $_POST['passwd']))
 {
 	$_SESSION['logged_on_user'] = "";

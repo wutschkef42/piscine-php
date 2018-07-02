@@ -1,3 +1,11 @@
+<?php
+session_start();
+if ($_SESSION['logged_on_user'] != 'root')
+{
+	echo "Error: no admin\n";
+	return ;
+}
+?>
 <!doctype html>
 <html>
 <head>

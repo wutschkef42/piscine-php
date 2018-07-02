@@ -35,18 +35,18 @@ function list_categories($category_store)
 	}
 }
 
-function get_products_by_category($category_name)
+function get_products_by_category($category_store, $category_name)
 {
-	// return value of this funciton will be an array of products
-	/*
-	$products = get_products_by_category('applicanes');
-	foreach($products as $key => $product)
+	$product_names = array();
+	$categories = unserialize(file_get_contents($category_store));
+	foreach ($categories as $cat)
 	{
-		//access by
-		//$product['product_name'];
-		//(product_name, image_url, description, price, categories_array)
+		if ($cat['category_name'] === $category_name)
+		{
+			$product_names = $cat['products'];
+			return ($product_names);
+		}
 	}
-	*/
 }
 
 function delete_product_associations($product_store, $category_name)

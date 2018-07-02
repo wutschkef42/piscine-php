@@ -9,4 +9,4 @@ if (!isset($_POST['product_name']) || !isset($_POST['price']) || !isset($_POST['
 }
 $categories = explode(',', $_POST['categories']);
 add_product($db_dir.$product_store, $_POST['product_name'], $_POST['image_url'], $_POST['price'], $_POST['description'], $categories);
-header('Location: admin_panel.html');
+header('Location: admin_panel.php');

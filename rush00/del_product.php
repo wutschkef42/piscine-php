@@ -8,3 +8,4 @@ if (!isset($_POST['product_name']) || !isset($_POST['del_product']))
 	return ;
 }
 del_product($db_dir.$product_store, $db_dir.$category_store, $_POST['product_name']);
+header('Location: admin_panel.php');
