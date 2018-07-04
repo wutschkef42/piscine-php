@@ -1,1 +1,1 @@
-CREATE DATABASE fwutschk;
+CREATE DATABASE db_fwutschk;
