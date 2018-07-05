@@ -1,0 +1,16 @@
+
+<- Matrix ----------------------------------------------------------------------
+The Color class handles transformations such as scaling, translation and rotation to one or several vertices.
+
+In 3D, a 4x4 matrix can be viewed as the representation of an ortho-standardised mark, namely 3 vectors for the 3 axes and one vertex to the origin of the mark. So we’ll represent all our matrices whatever their usefulness in the following manner, namely a basic array.
+
+
+The class provides the following methods :
+
+Matrix   mult( Matrix $m );
+Returns the multiplication of two matrices.
+
+Vertex transformVertex( Vertex $vtx );
+Returns a new vertex resulting from the transformation of the vertex by the matrix.
+
+---------------------------------------------------------------------- Matrix ->
