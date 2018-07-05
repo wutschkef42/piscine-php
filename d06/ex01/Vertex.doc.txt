@@ -1,0 +1,24 @@
+<- Vertex ----------------------------------------------------------------------
+The Vertex class handles vertices (points in 3D-space). It represents point in space.
+
+A new instance can be constructed from distinct x, y, z, w constitutives: 
+new Vertex( array( 'x' => 1, 'y' => 2, 'z' => 3, 'w' => 1.0 ) );
+w is a homogeneous coordinate.
+An optional Color coordinate may be passed to the constructor; it default to #FFFFFF.
+
+The class provides the following methods:
+
+getCoordX();
+getCoordY();
+getCoordZ();
+getCoordW();
+getColor();
+Getter methods for class attributes.
+
+setCoordX();
+setCoordY();
+setCoordZ();
+setCoordW();
+setColor();
+Setter methods for class attributes.
+---------------------------------------------------------------------- Vertex ->

@@ -1,0 +1,47 @@
+<- Vertex ----------------------------------------------------------------------
+The Vector class handles movement in space.
+
+A new instance can be constructed from distinct dest, orig constitutives:
+$dest = new Vertex( array( 'x' => 1, 'y' => 2, 'z' => 3, 'w' => 1.0 ) );
+$orig = new Vertex( array( 'x' => 0, 'y' => 0, 'z' => 0, 'w' => 1.0 ) );
+$vec = new Vector( array( 'dest' => $dest, 'orig' => $orig ) );
+
+w is a homogeneous coordinate.
+An optional Color coordinate may be passed to the constructor; it default to #FFFFFF.
+
+The class provides the following methods:
+
+getCoordX();
+getCoordY();
+getCoordZ();
+getCoordW();
+Getter methods for class attributes.
+
+magnitude();
+Returns euclidian norm length of vector
+
+normalize();
+Returns normalized vector (vector of lenght 1)
+
+add($v);
+Returns sum of $this and $v
+
+sub($v);
+Returns difference of $this and $v
+
+opposite();
+Returns opposite vector to $this
+
+scalarProduct($k);
+Returns scalar product of $this and scalar $k
+
+dotProduct($v);
+Returns dot product of $this and $v;
+
+cos($v);
+Returns angle between $this and $v;
+
+crossProduct($v);
+Returns cross product between $this and $v;
+
+---------------------------------------------------------------------- Vertex ->
