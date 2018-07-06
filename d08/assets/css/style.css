@@ -1,0 +1,26 @@
+
+html, body {
+	margin: 0;
+	padding: 0;
+	height:100%;
+  	width:100%;
+}
+
+body {
+	background-image: url("../img/background.jpg");
+	background-size: cover;
+	display:flex;
+}
+
+form {
+	background: #806595;
+	opacity: 0.9;
+	padding: 50px 100px;
+	margin:auto; /* nice thing of auto margin if display:flex; it center both horizontal and vertical :) */
+}
+
+form h1 {
+	color: white;
+	font-size: 36px;
+	font-family: Helvetica;
+}
